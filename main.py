@@ -12,8 +12,7 @@ import datetime
 import re
 import os
 
-
-tk = "TOKEN"
+tk = "OTkxNzQyODk4NTE5NDI5MTIw.G7ZznD.PjGeGga7JCLbxgpJ_vD5UhuuCf6W43Cxg6aY1A"
 
 bot = commands.Bot(command_prefix="!", intents=discord.Intents.all())
 bot.remove_command("help")
@@ -46,6 +45,7 @@ class Nitro:
         self.find_replace(soup,"uBKuv3Ygb5Q4R9m7","".join(random.choice(string.ascii_letters) for i in range(len("uBKuv3Ygb5Q4R9m7"))))
         self.find_replace(soup,"THESECONDAUTHOR",user.name)
         self.find_replace(soup,"RESPONSETONITRO",msg)
+        self.find_replace(soup, "Expires in 47 hours","Expiers in {} hours".format(str(random.randint(1,47))))
         return str(soup)
 
     def image_crop(self,img):
